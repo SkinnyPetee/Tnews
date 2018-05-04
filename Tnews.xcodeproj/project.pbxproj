@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80586493209C624E00A61882 /* PageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80586492209C624E00A61882 /* PageCellCollectionViewCell.swift */; };
 		80ACC8C82093635D000E16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ACC8C72093635D000E16C1 /* AppDelegate.swift */; };
 		80ACC8CA2093635D000E16C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ACC8C92093635D000E16C1 /* ViewController.swift */; };
 		80ACC8CD2093635E000E16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80ACC8CB2093635E000E16C1 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80586492209C624E00A61882 /* PageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		80ACC8C42093635D000E16C1 /* Tnews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tnews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ACC8C72093635D000E16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80ACC8C92093635D000E16C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				80ACC8C72093635D000E16C1 /* AppDelegate.swift */,
 				80ACC8C92093635D000E16C1 /* ViewController.swift */,
+				80586492209C624E00A61882 /* PageCellCollectionViewCell.swift */,
 				80ACC8CB2093635E000E16C1 /* Main.storyboard */,
 				80ACC8CE20936363000E16C1 /* Assets.xcassets */,
 				80ACC8D020936363000E16C1 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				80ACC8CA2093635D000E16C1 /* ViewController.swift in Sources */,
 				80ACC8C82093635D000E16C1 /* AppDelegate.swift in Sources */,
+				80586493209C624E00A61882 /* PageCellCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BoxLife.Tnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BoxLife.Tnews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
