@@ -12,6 +12,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak  var collectionView: UICollectionView!
     
+    let pages : [Page] = {
+       let firstPage = Page(imageName: "placeholder", message: "Read News From All Over The World")
+        let secondPage = Page(imageName: "placeholder", message: "Local News Custom Tailored For You")
+        let thirdPage = Page(imageName: "placeholder", message: "Let's Get Started")
+        return [firstPage,secondPage,thirdPage]
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +27,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.clipsToBounds = true
         collectionView.isPagingEnabled = true
         
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return pages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PageCellCollectionViewCell
+        let page = pages[indexPath.item]
+        cell.page = page
         return cell
     }
     

@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,25 +30,55 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID" id="yWh-cA-fWo">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="yWh-cA-fWo" customClass="PageCellCollectionViewCell" customModule="Tnews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="378" height="812"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="378" height="812"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen1" translatesAutoresizingMaskIntoConstraints="NO" id="pbT-ub-laC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="812"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local News Custom Tailored For You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="HY5-vk-PNh">
+                                                    <rect key="frame" x="24" y="430" width="330" height="23"/>
+                                                    <fontDescription key="fontDescription" name="SFMono-Medium" family="SF Mono" pointSize="20"/>
+                                                    <color key="textColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7D-Fg-BbY">
+                                                    <rect key="frame" x="158" y="469" width="63" height="7"/>
+                                                    <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="7" id="Q5d-DG-ZDJ"/>
+                                                        <constraint firstAttribute="width" constant="63" id="fkQ-9C-kWc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tDa-XJ-c8y">
+                                                    <rect key="frame" x="24" y="84" width="330" height="330"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="tDa-XJ-c8y" secondAttribute="height" multiplier="1:1" id="2LP-ZM-qia"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="pbT-ub-laC" firstAttribute="top" secondItem="yWh-cA-fWo" secondAttribute="top" id="Duy-UU-O7M"/>
-                                            <constraint firstItem="pbT-ub-laC" firstAttribute="leading" secondItem="yWh-cA-fWo" secondAttribute="leading" id="OHy-1M-M25"/>
-                                            <constraint firstAttribute="trailing" secondItem="pbT-ub-laC" secondAttribute="trailing" id="TSi-o2-xdU"/>
-                                            <constraint firstAttribute="bottom" secondItem="pbT-ub-laC" secondAttribute="bottom" id="Wzw-Un-Lg9"/>
+                                            <constraint firstItem="R7D-Fg-BbY" firstAttribute="top" secondItem="HY5-vk-PNh" secondAttribute="bottom" constant="16" id="0lm-SP-77a"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="HY5-vk-PNh" secondAttribute="trailing" constant="16" id="AFs-gb-gaC"/>
+                                            <constraint firstItem="HY5-vk-PNh" firstAttribute="leading" secondItem="yWh-cA-fWo" secondAttribute="leadingMargin" constant="16" id="HVW-0Z-Oq1"/>
+                                            <constraint firstItem="HY5-vk-PNh" firstAttribute="top" secondItem="tDa-XJ-c8y" secondAttribute="bottom" constant="16" id="IO1-L7-VSZ"/>
+                                            <constraint firstItem="tDa-XJ-c8y" firstAttribute="leading" secondItem="yWh-cA-fWo" secondAttribute="leadingMargin" constant="16" id="UeV-Of-nYe"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="tDa-XJ-c8y" secondAttribute="trailing" constant="16" id="XQp-eb-A5S"/>
+                                            <constraint firstItem="R7D-Fg-BbY" firstAttribute="centerX" secondItem="yWh-cA-fWo" secondAttribute="centerX" id="gRf-Le-hTe"/>
+                                            <constraint firstItem="tDa-XJ-c8y" firstAttribute="top" secondItem="yWh-cA-fWo" secondAttribute="topMargin" constant="32" id="z8e-p6-6bB"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cellImage" destination="tDa-XJ-c8y" id="B4W-oh-clx"/>
+                                            <outlet property="cvLabel" destination="HY5-vk-PNh" id="HiD-Kl-3Ao"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -66,10 +98,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96.799999999999997" y="15.517241379310345"/>
+            <point key="canvasLocation" x="95.625" y="15"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Screen1" width="375" height="812"/>
+        <image name="placeholder" width="149" height="128"/>
     </resources>
 </document>
