@@ -12,6 +12,7 @@ class PageCellCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
     
+    
     var page : Page? {
         didSet {
            
@@ -30,5 +31,6 @@ class PageCellCollectionViewCell: UICollectionViewCell {
         
         
     }
+    
     
 }

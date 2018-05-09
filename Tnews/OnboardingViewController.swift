@@ -8,9 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class OnboardingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,
+   UICollectionViewDelegateFlowLayout{
     
+    @IBOutlet weak var PrevButton: UIButton!
+    @IBOutlet weak var UIPageController: UIPageControl!
     @IBOutlet weak  var collectionView: UICollectionView!
+    
+    
     
     let pages : [Page] = {
        let firstPage = Page(imageName: "placeholder", message: "Read News From All Over The World")
@@ -26,7 +31,52 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
         collectionView.clipsToBounds = true
         collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+    
+        PrevButton.isHidden = true
         
+    }
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        
+        let indexPath = IndexPath(item: UIPageController.currentPage + 1, section: 0)
+        if UIPageController.currentPage + 1 <= 2 {
+            pNumber += 1
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            UIPageController.currentPage += 1
+            setPrevButtonHidden()
+        }
+        
+        
+    }
+    
+    @IBAction func prevButtonTapped(_ sender: UIButton) {
+        
+        
+        let indexPath = IndexPath(item: UIPageController.currentPage - 1, section: 0)
+        if UIPageController.currentPage - 1 >= 0 {
+            pNumber -= 1
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            UIPageController.currentPage -= 1
+            setPrevButtonHidden()
+        }
+    }
+    
+    func setPrevButtonHidden() {
+        if pNumber == 0 {
+            PrevButton.isHidden = true
+        }else {
+            PrevButton.isHidden = false
+        }
+    }
+    
+    
+    var pNumber = 0
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        pNumber = Int(targetContentOffset.pointee.x / view.frame.width)
+        setPrevButtonHidden()
+        UIPageController.currentPage = pNumber
         
     }
     
@@ -48,6 +98,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+  
     
     
 }
