@@ -78,6 +78,7 @@
                                         <connections>
                                             <outlet property="cellImage" destination="tDa-XJ-c8y" id="B4W-oh-clx"/>
                                             <outlet property="cvLabel" destination="HY5-vk-PNh" id="HiD-Kl-3Ao"/>
+                                            <segue destination="SF2-Hb-d8i" kind="custom" identifier="NewsSegue" customClass="SegueFromLeft" customModule="Tnews" customModuleProvider="target" id="ZAu-yI-351"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -164,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPu-v3-k7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831.2" y="14.77832512315271"/>
+            <point key="canvasLocation" x="1916" y="15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4FB-Lu-taG">
@@ -174,15 +175,19 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Ud-9g-TUT">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="feR-z4-Est">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Uvl-d4-X3E" kind="relationship" relationship="rootViewController" id="gqk-51-A6o"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyO-b9-fSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888.79999999999995" y="14.77832512315271"/>
+            <point key="canvasLocation" x="1031" y="21"/>
         </scene>
     </scenes>
     <resources>

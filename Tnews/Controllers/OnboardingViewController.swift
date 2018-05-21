@@ -38,6 +38,10 @@ class OnboardingViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         
+        if pNumber == 2 {
+            self.performSegue(withIdentifier: "NewsSegue", sender: self)
+        }
+        
         let indexPath = IndexPath(item: UIPageController.currentPage + 1, section: 0)
         if UIPageController.currentPage + 1 <= 2 {
             pNumber += 1
@@ -45,6 +49,8 @@ class OnboardingViewController: UIViewController, UICollectionViewDelegate, UICo
             UIPageController.currentPage += 1
             setPrevButtonHidden()
         }
+        print(pNumber)
+        print(UIPageController.currentPage)
         
         
     }
