@@ -158,14 +158,25 @@
                     <view key="view" contentMode="scaleToFill" id="6OH-Mp-i49">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circles-light" translatesAutoresizingMaskIntoConstraints="NO" id="UWZ-gu-UPO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UWZ-gu-UPO" secondAttribute="trailing" id="8uR-g5-cev"/>
+                            <constraint firstItem="UWZ-gu-UPO" firstAttribute="leading" secondItem="6OH-Mp-i49" secondAttribute="leading" id="Bvf-ig-HAx"/>
+                            <constraint firstAttribute="bottom" secondItem="UWZ-gu-UPO" secondAttribute="bottom" id="ae0-dX-rTw"/>
+                            <constraint firstItem="UWZ-gu-UPO" firstAttribute="top" secondItem="6OH-Mp-i49" secondAttribute="top" id="gwx-Ry-YOm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WqT-yA-njS"/>
                     </view>
                     <navigationItem key="navigationItem" id="jO6-Fg-tgQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPu-v3-k7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="15"/>
+            <point key="canvasLocation" x="1916" y="14.77832512315271"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4FB-Lu-taG">
@@ -191,6 +202,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circles-light" width="400" height="400"/>
         <image name="placeholder" width="149" height="128"/>
     </resources>
 </document>

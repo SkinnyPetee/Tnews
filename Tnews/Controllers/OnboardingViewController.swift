@@ -49,8 +49,7 @@ class OnboardingViewController: UIViewController, UICollectionViewDelegate, UICo
             UIPageController.currentPage += 1
             setPrevButtonHidden()
         }
-        print(pNumber)
-        print(UIPageController.currentPage)
+        
         
         
     }

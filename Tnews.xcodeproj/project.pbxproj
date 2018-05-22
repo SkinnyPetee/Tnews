@@ -103,10 +103,10 @@
 		80ACC8C62093635D000E16C1 /* Tnews */ = {
 			isa = PBXGroup;
 			children = (
-				80ACC8D320936363000E16C1 /* Info.plist */,
 				8070923420B08E5C00666281 /* Controllers */,
 				8070923620B08EC700666281 /* Views */,
 				8070923320B08E4F00666281 /* Models */,
+				80ACC8D320936363000E16C1 /* Info.plist */,
 			);
 			path = Tnews;
 			sourceTree = "<group>";
