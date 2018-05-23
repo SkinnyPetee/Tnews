@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801D74BA20B588C000D9B907 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801D74B920B588C000D9B907 /* Theme.swift */; };
 		802D210220B2D23D0062EE98 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D210120B2D23D0062EE98 /* SegueFromLeft.swift */; };
 		80586493209C624E00A61882 /* PageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80586492209C624E00A61882 /* PageCellCollectionViewCell.swift */; };
 		805D5632209DCCCF00ECDF11 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805D5631209DCCCF00ECDF11 /* Page.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		801D74B920B588C000D9B907 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		802D210120B2D23D0062EE98 /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		80586492209C624E00A61882 /* PageCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		805D5631209DCCCF00ECDF11 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				80ACC8CE20936363000E16C1 /* Assets.xcassets */,
+				801D74B920B588C000D9B907 /* Theme.swift */,
 				80ACC8D020936363000E16C1 /* LaunchScreen.storyboard */,
 				80ACC8C72093635D000E16C1 /* AppDelegate.swift */,
 				80ACC8CB2093635E000E16C1 /* Main.storyboard */,
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80ACC8CA2093635D000E16C1 /* OnboardingViewController.swift in Sources */,
+				801D74BA20B588C000D9B907 /* Theme.swift in Sources */,
 				80ACC8C82093635D000E16C1 /* AppDelegate.swift in Sources */,
 				802D210220B2D23D0062EE98 /* SegueFromLeft.swift in Sources */,
 				805D5632209DCCCF00ECDF11 /* Page.swift in Sources */,

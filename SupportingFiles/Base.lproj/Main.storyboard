@@ -151,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="95.625" y="15"/>
         </scene>
-        <!--News View Controller-->
+        <!--NewsFeed-->
         <scene sceneID="6Pr-zu-LFm">
             <objects>
                 <viewController id="Uvl-d4-X3E" customClass="NewsViewController" customModule="Tnews" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WqT-yA-njS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jO6-Fg-tgQ"/>
+                    <navigationItem key="navigationItem" title="NewsFeed" id="jO6-Fg-tgQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPu-v3-k7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,10 +183,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SF2-Hb-d8i" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Ud-9g-TUT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7Ud-9g-TUT">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="feR-z4-Est">

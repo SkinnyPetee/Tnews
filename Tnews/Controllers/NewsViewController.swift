@@ -18,22 +18,38 @@ class NewsViewController: UIViewController {
         addForwardAndBackwardButton()
         
     }
+    
+    var theme = Theme()
+    
+    
+    var currentTheme =  UIColor(red:0.56, green:0.07, blue:1.00, alpha:1.0) {
+        didSet {
+            forwardButton.backgroundColor = currentTheme
+            backwardButton.backgroundColor = currentTheme
+            navigationController?.navigationBar.barTintColor = currentTheme
+            NewsCard.backgroundColor = currentTheme
+        }
+    }
+
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         colorButton.layer.cornerRadius = 0.5 * colorButton.bounds.size.width
         colorButton.layer.masksToBounds = true
         forwardButton.layer.cornerRadius = 0.5 * forwardButton.bounds.size.width
-        forwardButton.layer.masksToBounds = true
+        //forwardButton.layer.masksToBounds = true
         backwardButton.layer.cornerRadius = 0.5 * backwardButton.bounds.size.width
-        backwardButton.layer.masksToBounds = true
+        //backwardButton.layer.masksToBounds = true
     }
     
     
+    var NewsCard = UIView()
     
     func addNewsCard() {
-        let NewsCard : UIView = {
+        
+        let tempNewsCard  : UIView = {
             let nc = UIView()
-            nc.backgroundColor =  UIColor(red:0.56, green:0.07, blue:1.00, alpha:1.0)
+            nc.backgroundColor =  currentTheme
             nc.translatesAutoresizingMaskIntoConstraints = false
             nc.layer.cornerRadius = 15
             nc.layer.shadowColor = UIColor.gray.cgColor
@@ -43,12 +59,14 @@ class NewsViewController: UIViewController {
             return nc
         }()
         
+        NewsCard = tempNewsCard
+        
         view.addSubview(NewsCard)
         NewsCard.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85).isActive = true
-        NewsCard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.55).isActive = true
+        NewsCard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.60).isActive = true
         NewsCard.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        let YConstant = UIScreen.main.bounds.size.height * 0.1
+        let YConstant = UIScreen.main.bounds.size.height * 0.05
         
         NewsCard.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -YConstant).isActive = true
     }
@@ -58,9 +76,19 @@ class NewsViewController: UIViewController {
         let cb = UIButton()
         cb.translatesAutoresizingMaskIntoConstraints = false
         cb.backgroundColor = .black
-        
+        cb.addTarget(self, action: #selector(colorButtonClicked), for: .touchUpInside)
         return cb
     }()
+    
+    
+    @objc func colorButtonClicked() {
+        let colorButtonColor = colorButton.backgroundColor
+        currentTheme = colorButtonColor!
+        colorButton.backgroundColor = theme.giveNextColor()
+        
+    }
+    
+    
     
     func addColorButton() {
         
@@ -80,6 +108,10 @@ class NewsViewController: UIViewController {
         let fb = UIButton()
         fb.translatesAutoresizingMaskIntoConstraints = false
         fb.backgroundColor = UIColor(red:0.56, green:0.07, blue:1.00, alpha:1.0)
+        fb.layer.shadowColor = UIColor.gray.cgColor
+        fb.layer.shadowOpacity = 1
+        fb.layer.shadowOffset = CGSize.zero
+        fb.layer.shadowRadius = 15
         return fb
     }()
    
@@ -88,6 +120,10 @@ class NewsViewController: UIViewController {
         let bb = UIButton()
         bb.translatesAutoresizingMaskIntoConstraints = false
         bb.backgroundColor = UIColor(red:0.56, green:0.07, blue:1.00, alpha:1.0)
+        bb.layer.shadowColor = UIColor.gray.cgColor
+        bb.layer.shadowOpacity = 1
+        bb.layer.shadowOffset = CGSize.zero
+        bb.layer.shadowRadius = 15
         return bb
     }()
     
@@ -109,6 +145,21 @@ class NewsViewController: UIViewController {
         
         
     }
+    
+    
+   
+    
+    
+    
+    
+        
+    
+    
+        
+        
+        
+        
+        
     
     
     
