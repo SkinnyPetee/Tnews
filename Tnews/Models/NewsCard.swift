@@ -9,9 +9,15 @@
 import Foundation
 
 
-struct NewsCardModel {
+struct NewsCard {
     
     
+    let imageName : String?
+    let source : String?
+    let headline : String?
+   let description : String?
+    let sourceUrl : String?
+    let category : String?
     
     
     

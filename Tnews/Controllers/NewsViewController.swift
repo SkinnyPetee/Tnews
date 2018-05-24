@@ -9,6 +9,8 @@
 import UIKit
 
 class NewsViewController: UIViewController {
+    
+    //UI code goes here
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +18,7 @@ class NewsViewController: UIViewController {
         addNewsCard()
         addColorButton()
         addForwardAndBackwardButton()
+        getNewsCardFromURL()
         
     }
     
@@ -24,10 +27,14 @@ class NewsViewController: UIViewController {
     
     var currentTheme =  UIColor(red:0.56, green:0.07, blue:1.00, alpha:1.0) {
         didSet {
-            forwardButton.backgroundColor = currentTheme
-            backwardButton.backgroundColor = currentTheme
-            navigationController?.navigationBar.barTintColor = currentTheme
-            NewsCard.backgroundColor = currentTheme
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.forwardButton.backgroundColor = self.currentTheme
+                self.backwardButton.backgroundColor = self.currentTheme
+                self.navigationController?.navigationBar.barTintColor = self.currentTheme
+                self.navigationController?.navigationBar.layoutIfNeeded()
+                self.NewsCard.backgroundColor = self.currentTheme
+            }, completion:nil)
+            
         }
     }
 
@@ -146,22 +153,82 @@ class NewsViewController: UIViewController {
         
     }
     
-    
-   
-    
+    // networking code
     
     
     
+    private func getNewsCardFromURL() {
+        let url = URL(string: "\(URLConstants.BaseURL)\(URLConstants.endPoints)?country=\(URLConstants.parameters.country)&apiKey=\(URLConstants.parameters.api_key)")!
+        let request = URLRequest(url: url)
         
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if error == nil {
+                if let data = data {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data, options: []) as AnyObject
+                        if let articles = json["articles"] as? [AnyObject]  {
+                            for article in articles {
+                                if let source = article["source"] as? [String:AnyObject] {
+                                    if let id = source["id"] as? String {
+                                        print(id)
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                    catch {
+                        print("couldnt serialize json")
+                    }
+                    
+                }
+            }else {
+                print("something went wrong")
+            }
+            
+            
+        }
+        
+        task.resume()
+        
+    }
     
     
-        
-        
-        
-        
-        
     
     
     
-
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
